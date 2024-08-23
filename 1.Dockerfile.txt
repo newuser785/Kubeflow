@@ -1,0 +1,11 @@
+# Используем базовый образ TensorFlow
+FROM tensorflow/tensorflow:2.10.0
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем Python-скрипт в рабочую директорию
+COPY train_fashion_mnist_model.py /app/train_fashion_mnist_model.py
+
+# Запуск скрипта при старте контейнера
+CMD ["python", "/app/train_fashion_mnist_model.py"]
